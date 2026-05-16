@@ -12,7 +12,7 @@ type User struct {
 	Passproblem string `gorm:"type:varchar(255);not null" json:"passproblem"`
 }
 
-// 将明文存入 Password 字段
+// 将密码存入 Password 字段
 func (u *User) SetPassword(pwd string) error {
 	u.Password = pwd
 	return nil
@@ -23,7 +23,7 @@ func (u *User) SetPassproblem(pwd string) error {
 	return nil
 }
 
-// 比较明文
+// 比较密码
 func (u *User) CheckPassword(pwd string) bool {
 	return u.Password == pwd
 }
